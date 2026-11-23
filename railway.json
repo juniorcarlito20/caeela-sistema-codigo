@@ -8,6 +8,9 @@
     "healthcheckPath": "/entrar",
     "healthcheckTimeout": 100,
     "restartPolicyType": "ON_FAILURE",
-    "restartPolicyMaxRetries": 10
+    "restartPolicyMaxRetries": 10,
+    "preDeployCommand": [
+      "npx prisma migrate deploy && npx tsx src/db/seed-demo.ts"
+    ]
   }
 }
