@@ -28,7 +28,16 @@ estão no relatório do Trabalho Final.
 
 ## Versão de demonstração
 
-Endereço e logins de teste: ver o relatório do Trabalho Final.
+Endereço: https://sistema-production-037f8b1f.up.railway.app
+(na primeira abertura pode levar uns 20 segundos para "acordar")
+
+| Perfil | Usuário | Senha |
+|---|---|---|
+| Direção | `direcao` | `demo2026` |
+| Secretaria | `secretaria` | `demo2026` |
+| Profissional (Psicologia) | `ana.psicologia` | `demo2026` |
+
+Todos os alunos, profissionais e registros dessa versão são inventados.
 
 ## Tecnologias
 
