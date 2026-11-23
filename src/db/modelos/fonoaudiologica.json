@@ -1,0 +1,587 @@
+{
+  "nome": "Anamnese Fonoaudiológica Infantil",
+  "area": "Fonoaudiologia",
+  "campos": [
+    {
+      "id": "nome",
+      "rotulo": "Nome",
+      "tipo": "texto",
+      "secao": "Identificação"
+    },
+    {
+      "id": "data_de_nascimento",
+      "rotulo": "Data de nascimento",
+      "tipo": "data",
+      "secao": "Identificação"
+    },
+    {
+      "id": "idade",
+      "rotulo": "Idade",
+      "tipo": "texto",
+      "secao": "Identificação"
+    },
+    {
+      "id": "sexo_m_f",
+      "rotulo": "Sexo",
+      "tipo": "texto",
+      "secao": "Identificação"
+    },
+    {
+      "id": "naturalidade",
+      "rotulo": "Naturalidade",
+      "tipo": "texto",
+      "secao": "Identificação"
+    },
+    {
+      "id": "escola",
+      "rotulo": "Escola",
+      "tipo": "texto",
+      "secao": "Identificação"
+    },
+    {
+      "id": "serie_ano_escolar",
+      "rotulo": "Série/Ano escolar",
+      "tipo": "texto",
+      "secao": "Identificação"
+    },
+    {
+      "id": "turno_escolar",
+      "rotulo": "Turno escolar",
+      "tipo": "texto",
+      "secao": "Identificação"
+    },
+    {
+      "id": "nome_do_responsavel",
+      "rotulo": "Nome do responsável",
+      "tipo": "texto",
+      "secao": "Responsáveis"
+    },
+    {
+      "id": "grau_de_parentesco",
+      "rotulo": "Grau de parentesco",
+      "tipo": "texto",
+      "secao": "Responsáveis"
+    },
+    {
+      "id": "profissao",
+      "rotulo": "Profissão",
+      "tipo": "texto",
+      "secao": "Responsáveis"
+    },
+    {
+      "id": "telefone",
+      "rotulo": "Telefone",
+      "tipo": "texto",
+      "secao": "Responsáveis"
+    },
+    {
+      "id": "outro_responsavel",
+      "rotulo": "Outro responsável",
+      "tipo": "texto",
+      "secao": "Responsáveis"
+    },
+    {
+      "id": "quem_mora_com_a_crianca",
+      "rotulo": "Quem mora com a criança",
+      "tipo": "texto",
+      "secao": "Responsáveis"
+    },
+    {
+      "id": "qual_a_principal_queixa",
+      "rotulo": "Qual a principal queixa?",
+      "tipo": "texto",
+      "secao": "Queixa Principal"
+    },
+    {
+      "id": "quem_percebeu_primeiro_a_dificuldade",
+      "rotulo": "Quem percebeu primeiro a dificuldade?",
+      "tipo": "texto",
+      "secao": "Queixa Principal"
+    },
+    {
+      "id": "ha_quanto_tempo_percebe_a_dificuldade",
+      "rotulo": "Há quanto tempo percebe a dificuldade?",
+      "tipo": "texto",
+      "secao": "Queixa Principal"
+    },
+    {
+      "id": "a_dificuldade_esta_piorando_melhorando",
+      "rotulo": "A dificuldade está piorando, melhorando ou permanece igual?",
+      "tipo": "textarea",
+      "secao": "Queixa Principal"
+    },
+    {
+      "id": "a_gravidez_foi_planejada_sim_nao",
+      "rotulo": "A gravidez foi planejada?",
+      "tipo": "sim_nao",
+      "secao": "Gestação"
+    },
+    {
+      "id": "houve_acompanhamento_pre_natal_sim_nao",
+      "rotulo": "Houve acompanhamento pré-natal?",
+      "tipo": "sim_nao",
+      "secao": "Gestação"
+    },
+    {
+      "id": "quantas_consultas_sim_nao",
+      "rotulo": "Quantas consultas?",
+      "tipo": "sim_nao",
+      "secao": "Gestação"
+    },
+    {
+      "id": "uso_de_medicamentos_durante_a_gestacao",
+      "rotulo": "Uso de medicamentos durante a gestação? Quais?",
+      "tipo": "sim_nao",
+      "secao": "Gestação"
+    },
+    {
+      "id": "uso_de_alcool_cigarro_ou_drogas",
+      "rotulo": "Uso de álcool, cigarro ou drogas?",
+      "tipo": "texto",
+      "secao": "Gestação"
+    },
+    {
+      "id": "doencas_durante_a_gestacao_hipertensao",
+      "rotulo": "Doenças durante a gestação (hipertensão, diabetes, infecções etc.)",
+      "tipo": "textarea",
+      "secao": "Gestação"
+    },
+    {
+      "id": "ocorreram_intercorrencias_na_gravidez_",
+      "rotulo": "Ocorreram intercorrências na gravidez?",
+      "tipo": "sim_nao",
+      "secao": "Gestação"
+    },
+    {
+      "id": "tipo_de_parto_normal_cesarea_forceps",
+      "rotulo": "Tipo de parto Normal Cesárea Fórceps",
+      "tipo": "escolha",
+      "secao": "Nascimento",
+      "opcoes": [
+        "Normal",
+        "Cesárea",
+        "Fórceps"
+      ]
+    },
+    {
+      "id": "idade_gestacional",
+      "rotulo": "Idade gestacional",
+      "tipo": "texto",
+      "secao": "Nascimento"
+    },
+    {
+      "id": "peso_ao_nascer",
+      "rotulo": "Peso ao nascer",
+      "tipo": "texto",
+      "secao": "Nascimento"
+    },
+    {
+      "id": "chorou_ao_nascer_sim_nao",
+      "rotulo": "Chorou ao nascer?",
+      "tipo": "sim_nao",
+      "secao": "Nascimento"
+    },
+    {
+      "id": "precisou_de_incubadora_quanto_tempo",
+      "rotulo": "Precisou de incubadora? Quanto tempo?",
+      "tipo": "texto",
+      "secao": "Nascimento"
+    },
+    {
+      "id": "ficou_internado_apos_o_nascimento",
+      "rotulo": "Ficou internado após o nascimento?",
+      "tipo": "texto",
+      "secao": "Nascimento"
+    },
+    {
+      "id": "sustentou_a_cabeca_com",
+      "rotulo": "Sustentou a cabeça com",
+      "tipo": "texto",
+      "secao": "Desenvolvimento Neuropsicomotor"
+    },
+    {
+      "id": "sentou_sem_apoio_com",
+      "rotulo": "Sentou sem apoio com",
+      "tipo": "texto",
+      "secao": "Desenvolvimento Neuropsicomotor"
+    },
+    {
+      "id": "engatinhou_com",
+      "rotulo": "Engatinhou com",
+      "tipo": "texto",
+      "secao": "Desenvolvimento Neuropsicomotor"
+    },
+    {
+      "id": "andou_com",
+      "rotulo": "Andou com",
+      "tipo": "texto",
+      "secao": "Desenvolvimento Neuropsicomotor"
+    },
+    {
+      "id": "desenvolvimento_da_fala",
+      "rotulo": "Desenvolvimento da fala",
+      "tipo": "texto",
+      "secao": "Desenvolvimento Neuropsicomotor"
+    },
+    {
+      "id": "balbuciou_com",
+      "rotulo": "Balbuciou com",
+      "tipo": "texto",
+      "secao": "Desenvolvimento Neuropsicomotor"
+    },
+    {
+      "id": "primeiras_palavras_com",
+      "rotulo": "Primeiras palavras com",
+      "tipo": "texto",
+      "secao": "Desenvolvimento Neuropsicomotor"
+    },
+    {
+      "id": "primeiras_frases_com",
+      "rotulo": "Primeiras frases com",
+      "tipo": "texto",
+      "secao": "Desenvolvimento Neuropsicomotor"
+    },
+    {
+      "id": "com_que_idade_comecou_a_falar_mais_cla",
+      "rotulo": "Com que idade começou a falar mais claramente?",
+      "tipo": "textarea",
+      "secao": "Desenvolvimento Neuropsicomotor"
+    },
+    {
+      "id": "a_crianca_compreende_ordens_simples_si",
+      "rotulo": "A criança compreende ordens simples?",
+      "tipo": "sim_nao",
+      "secao": "Desenvolvimento da Linguagem"
+    },
+    {
+      "id": "compreende_ordens_complexas_sim_nao",
+      "rotulo": "Compreende ordens complexas?",
+      "tipo": "sim_nao",
+      "secao": "Desenvolvimento da Linguagem"
+    },
+    {
+      "id": "se_comunica_bem_com_outras_pessoas_sim",
+      "rotulo": "Se comunica bem com outras pessoas?",
+      "tipo": "sim_nao",
+      "secao": "Desenvolvimento da Linguagem"
+    },
+    {
+      "id": "usa_gestos_para_se_comunicar_sim_nao",
+      "rotulo": "Usa gestos para se comunicar?",
+      "tipo": "sim_nao",
+      "secao": "Desenvolvimento da Linguagem"
+    },
+    {
+      "id": "fala_muito_ou_pouco_sim_nao",
+      "rotulo": "Fala muito ou pouco?",
+      "tipo": "sim_nao",
+      "secao": "Desenvolvimento da Linguagem"
+    },
+    {
+      "id": "apresenta_troca_de_sons_na_fala_quais_",
+      "rotulo": "Apresenta troca de sons na fala? Quais?",
+      "tipo": "sim_nao",
+      "secao": "Desenvolvimento da Linguagem"
+    },
+    {
+      "id": "fala_e_compreendida_por_pessoas_fora_d",
+      "rotulo": "Fala é compreendida por pessoas fora da família?",
+      "tipo": "sim_nao",
+      "secao": "Desenvolvimento da Linguagem"
+    },
+    {
+      "id": "usa_chupeta_ate_que_idade_sim_nao",
+      "rotulo": "Usa chupeta? Até que idade?",
+      "tipo": "sim_nao",
+      "secao": "Motricidade Orofacial"
+    },
+    {
+      "id": "usou_mamadeira_ate_que_idade_sim_nao",
+      "rotulo": "Usou mamadeira? Até que idade?",
+      "tipo": "sim_nao",
+      "secao": "Motricidade Orofacial"
+    },
+    {
+      "id": "chupa_dedo_sim_nao",
+      "rotulo": "Chupa dedo?",
+      "tipo": "sim_nao",
+      "secao": "Motricidade Orofacial"
+    },
+    {
+      "id": "range_os_dentes_bruxismo_sim_nao",
+      "rotulo": "Range os dentes (bruxismo)?",
+      "tipo": "sim_nao",
+      "secao": "Motricidade Orofacial"
+    },
+    {
+      "id": "baba_frequentemente_sim_nao",
+      "rotulo": "Baba frequentemente?",
+      "tipo": "sim_nao",
+      "secao": "Motricidade Orofacial"
+    },
+    {
+      "id": "mantem_boca_aberta_sim_nao",
+      "rotulo": "Mantém boca aberta?",
+      "tipo": "sim_nao",
+      "secao": "Motricidade Orofacial"
+    },
+    {
+      "id": "respira_pela_boca_ou_nariz_sim_nao",
+      "rotulo": "Respira pela boca ou nariz?",
+      "tipo": "sim_nao",
+      "secao": "Motricidade Orofacial"
+    },
+    {
+      "id": "amamentacao_materna_ate_que_idade",
+      "rotulo": "Amamentação materna? Até que idade?",
+      "tipo": "texto",
+      "secao": "Alimentação"
+    },
+    {
+      "id": "houve_dificuldade_para_mamar_sim_nao",
+      "rotulo": "Houve dificuldade para mamar?",
+      "tipo": "sim_nao",
+      "secao": "Alimentação"
+    },
+    {
+      "id": "introducao_alimentar_ocorreu_com",
+      "rotulo": "Introdução alimentar ocorreu com",
+      "tipo": "texto",
+      "secao": "Alimentação"
+    },
+    {
+      "id": "aceita_bem_alimentos_solidos",
+      "rotulo": "Aceita bem alimentos sólidos?",
+      "tipo": "texto",
+      "secao": "Alimentação"
+    },
+    {
+      "id": "prefere_alimentos_pastosos_ou_liquidos",
+      "rotulo": "Prefere alimentos pastosos ou líquidos?",
+      "tipo": "texto",
+      "secao": "Alimentação"
+    },
+    {
+      "id": "engasga_com_frequencia",
+      "rotulo": "Engasga com frequência?",
+      "tipo": "texto",
+      "secao": "Alimentação"
+    },
+    {
+      "id": "mastiga_bem_os_alimentos",
+      "rotulo": "Mastiga bem os alimentos?",
+      "tipo": "texto",
+      "secao": "Alimentação"
+    },
+    {
+      "id": "ja_realizou_exame_de_audicao_sim_nao",
+      "rotulo": "Já realizou exame de audição?",
+      "tipo": "sim_nao",
+      "secao": "Audição"
+    },
+    {
+      "id": "resultado",
+      "rotulo": "Resultado",
+      "tipo": "texto",
+      "secao": "Audição"
+    },
+    {
+      "id": "costuma_pedir_para_repetir_o_que_foi_d",
+      "rotulo": "Costuma pedir para repetir o que foi dito?",
+      "tipo": "sim_nao",
+      "secao": "Audição"
+    },
+    {
+      "id": "aumenta_muito_o_volume_da_tv_sim_nao",
+      "rotulo": "Aumenta muito o volume da TV?",
+      "tipo": "sim_nao",
+      "secao": "Audição"
+    },
+    {
+      "id": "teve_muitas_infeccoes_de_ouvido_otite_",
+      "rotulo": "Teve muitas infecções de ouvido (otite)?",
+      "tipo": "sim_nao",
+      "secao": "Audição"
+    },
+    {
+      "id": "ja_realizou_exame_oftalmologico_sim_na",
+      "rotulo": "Já realizou exame oftalmológico?",
+      "tipo": "sim_nao",
+      "secao": "Visão"
+    },
+    {
+      "id": "usa_oculos_sim_nao",
+      "rotulo": "Usa óculos?",
+      "tipo": "sim_nao",
+      "secao": "Visão"
+    },
+    {
+      "id": "gosta_de_ir_a_escola_sim_nao",
+      "rotulo": "Gosta de ir à escola?",
+      "tipo": "sim_nao",
+      "secao": "Vida Escolar"
+    },
+    {
+      "id": "apresenta_dificuldades_escolares_sim_n",
+      "rotulo": "Apresenta dificuldades escolares?",
+      "tipo": "sim_nao",
+      "secao": "Vida Escolar"
+    },
+    {
+      "id": "dificuldade_em_leitura_sim_nao",
+      "rotulo": "Dificuldade em leitura?",
+      "tipo": "sim_nao",
+      "secao": "Vida Escolar"
+    },
+    {
+      "id": "dificuldade_em_escrita_sim_nao",
+      "rotulo": "Dificuldade em escrita?",
+      "tipo": "sim_nao",
+      "secao": "Vida Escolar"
+    },
+    {
+      "id": "professores_relatam_alguma_dificuldade",
+      "rotulo": "Professores relatam alguma dificuldade?",
+      "tipo": "sim_nao",
+      "secao": "Vida Escolar"
+    },
+    {
+      "id": "como_e_a_relacao_com_colegas",
+      "rotulo": "Como é a relação com colegas?",
+      "tipo": "texto",
+      "secao": "Vida Escolar"
+    },
+    {
+      "id": "boa_ruim_dificil",
+      "rotulo": "Boa. Ruim. Dificil",
+      "tipo": "texto",
+      "secao": "Vida Escolar"
+    },
+    {
+      "id": "a_crianca_e_agitada_timida_irritada_di",
+      "rotulo": "A criança é: Agitada. Tímida. Irritada. Distraída. Ansiosa",
+      "tipo": "texto",
+      "secao": "Comportamento"
+    },
+    {
+      "id": "mantem_atencao_nas_atividades_sim_nao",
+      "rotulo": "Mantém atenção nas atividades?",
+      "tipo": "sim_nao",
+      "secao": "Comportamento"
+    },
+    {
+      "id": "tem_dificuldade_para_seguir_regras_sim",
+      "rotulo": "Tem dificuldade para seguir regras?",
+      "tipo": "sim_nao",
+      "secao": "Comportamento"
+    },
+    {
+      "id": "doencas_importantes",
+      "rotulo": "Doenças importantes",
+      "tipo": "texto",
+      "secao": "Histórico de Saúde"
+    },
+    {
+      "id": "internacoes",
+      "rotulo": "Internações",
+      "tipo": "texto",
+      "secao": "Histórico de Saúde"
+    },
+    {
+      "id": "cirurgias",
+      "rotulo": "Cirurgias",
+      "tipo": "texto",
+      "secao": "Histórico de Saúde"
+    },
+    {
+      "id": "uso_de_medicamentos_continuos",
+      "rotulo": "Uso de medicamentos contínuos",
+      "tipo": "texto",
+      "secao": "Histórico de Saúde"
+    },
+    {
+      "id": "acompanhamento_com_outros_profissionai",
+      "rotulo": "Acompanhamento com outros profissionais",
+      "tipo": "texto",
+      "secao": "Histórico de Saúde"
+    },
+    {
+      "id": "neurologista_psicologo_psicopedagoga_o",
+      "rotulo": "Neurologista. Psicólogo. Psicopedagoga. Otorrino. Outros",
+      "tipo": "texto",
+      "secao": "Histórico de Saúde"
+    },
+    {
+      "id": "ha_casos_na_familia_de",
+      "rotulo": "Há casos na família de",
+      "tipo": "texto",
+      "secao": "Histórico Familiar"
+    },
+    {
+      "id": "atraso_de_fala_gagueira_dificuldades_e",
+      "rotulo": "atraso de fala. gagueira. dificuldades escolares. surdez",
+      "tipo": "texto",
+      "secao": "Histórico Familiar"
+    },
+    {
+      "id": "sindromes_ou_transtornos_do_desenvolvi",
+      "rotulo": "síndromes ou transtornos do desenvolvimento",
+      "tipo": "texto",
+      "secao": "Histórico Familiar"
+    },
+    {
+      "id": "comportamento_durante_avaliacao",
+      "rotulo": "Comportamento durante avaliação",
+      "tipo": "texto",
+      "secao": "Observações do Fonoaudiólogo"
+    },
+    {
+      "id": "tipo_de_comunicacao_observada",
+      "rotulo": "Tipo de comunicação observada",
+      "tipo": "texto",
+      "secao": "Observações do Fonoaudiólogo"
+    },
+    {
+      "id": "compreensao",
+      "rotulo": "Compreensão",
+      "tipo": "texto",
+      "secao": "Observações do Fonoaudiólogo"
+    },
+    {
+      "id": "producao_de_fala",
+      "rotulo": "Produção de fala",
+      "tipo": "texto",
+      "secao": "Observações do Fonoaudiólogo"
+    },
+    {
+      "id": "licinio_de_almeida_ba",
+      "rotulo": "Licínio de Almeida-Ba",
+      "tipo": "texto",
+      "secao": "Observações do Fonoaudiólogo"
+    },
+    {
+      "id": "data_da_avaliacao",
+      "rotulo": "Data da avaliação",
+      "tipo": "data",
+      "secao": "Observações do Fonoaudiólogo"
+    },
+    {
+      "id": "assinatura_do_responsavel",
+      "rotulo": "Assinatura do responsável",
+      "tipo": "texto",
+      "secao": "Observações do Fonoaudiólogo"
+    },
+    {
+      "id": "fonoaudiologo_rafael_aquino_ribeiro",
+      "rotulo": "Fonoaudiólogo: Rafael Aquino Ribeiro",
+      "tipo": "texto",
+      "secao": "Observações do Fonoaudiólogo"
+    },
+    {
+      "id": "crfa_4_15826",
+      "rotulo": "CRFa 4- 15826",
+      "tipo": "texto",
+      "secao": "Observações do Fonoaudiólogo"
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "Aluno" ADD COLUMN     "pausaRetomarEm" TIMESTAMP(3),
+ADD COLUMN     "situacaoDesde" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP;

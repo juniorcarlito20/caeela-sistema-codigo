@@ -1,0 +1,551 @@
+{
+  "nome": "Anamnese Psicopedagógica Clínica",
+  "area": "Psicopedagogia Clínica",
+  "descricao": "Modelo da psicopedagogia clínica do CAEELA, com ênfase em história escolar, leitura, escrita, raciocínio, atenção e rotina de estudos. Nenhum campo é obrigatório.",
+  "campos": [
+    {
+      "id": "data_anamnese",
+      "rotulo": "Data da anamnese",
+      "tipo": "data",
+      "secao": "Identificação"
+    },
+    {
+      "id": "quem_informou",
+      "rotulo": "Quem prestou as informações",
+      "tipo": "texto",
+      "secao": "Identificação"
+    },
+    {
+      "id": "naturalidade",
+      "rotulo": "Naturalidade",
+      "tipo": "texto",
+      "secao": "Identificação"
+    },
+    {
+      "id": "endereco",
+      "rotulo": "Endereço e número",
+      "tipo": "texto",
+      "secao": "Identificação"
+    },
+    {
+      "id": "bairro",
+      "rotulo": "Bairro",
+      "tipo": "texto",
+      "secao": "Identificação"
+    },
+    {
+      "id": "mae_nome",
+      "rotulo": "Nome da mãe",
+      "tipo": "texto",
+      "secao": "Família e responsáveis"
+    },
+    {
+      "id": "mae_escolaridade",
+      "rotulo": "Escolaridade da mãe",
+      "tipo": "texto",
+      "secao": "Família e responsáveis"
+    },
+    {
+      "id": "pai_nome",
+      "rotulo": "Nome do pai",
+      "tipo": "texto",
+      "secao": "Família e responsáveis"
+    },
+    {
+      "id": "pai_escolaridade",
+      "rotulo": "Escolaridade do pai",
+      "tipo": "texto",
+      "secao": "Família e responsáveis"
+    },
+    {
+      "id": "com_quem_mora",
+      "rotulo": "Com quem a criança mora",
+      "tipo": "texto",
+      "secao": "Família e responsáveis"
+    },
+    {
+      "id": "irmaos",
+      "rotulo": "Irmãos (idades e escolaridade)",
+      "tipo": "textarea",
+      "secao": "Família e responsáveis"
+    },
+    {
+      "id": "quem_acompanha_estudos",
+      "rotulo": "Quem acompanha os estudos em casa",
+      "tipo": "texto",
+      "secao": "Família e responsáveis"
+    },
+    {
+      "id": "queixa_principal",
+      "rotulo": "Qual a queixa que motivou a avaliação?",
+      "tipo": "textarea",
+      "secao": "Queixa e encaminhamento"
+    },
+    {
+      "id": "quem_encaminhou",
+      "rotulo": "Quem encaminhou",
+      "tipo": "escolha",
+      "secao": "Queixa e encaminhamento",
+      "opcoes": [
+        "Escola",
+        "Família",
+        "Médico",
+        "Outro profissional do CAEELA",
+        "Outro"
+      ]
+    },
+    {
+      "id": "inicio_dificuldade",
+      "rotulo": "Quando a dificuldade começou a ser percebida",
+      "tipo": "texto",
+      "secao": "Queixa e encaminhamento"
+    },
+    {
+      "id": "avaliacoes_anteriores",
+      "rotulo": "Já passou por outras avaliações? Quais e quando?",
+      "tipo": "textarea",
+      "secao": "Queixa e encaminhamento"
+    },
+    {
+      "id": "tem_laudo",
+      "rotulo": "Possui laudo ou diagnóstico?",
+      "tipo": "sim_nao",
+      "secao": "Queixa e encaminhamento"
+    },
+    {
+      "id": "qual_diagnostico",
+      "rotulo": "Qual diagnóstico consta no laudo",
+      "tipo": "texto",
+      "secao": "Queixa e encaminhamento"
+    },
+    {
+      "id": "expectativa_familia",
+      "rotulo": "O que a família espera desta avaliação",
+      "tipo": "textarea",
+      "secao": "Queixa e encaminhamento"
+    },
+    {
+      "id": "gravidez_intercorrencias",
+      "rotulo": "Houve intercorrências na gestação ou no parto?",
+      "tipo": "textarea",
+      "secao": "Gestação, nascimento e desenvolvimento"
+    },
+    {
+      "id": "prematuro",
+      "rotulo": "Nasceu prematura?",
+      "tipo": "sim_nao",
+      "secao": "Gestação, nascimento e desenvolvimento"
+    },
+    {
+      "id": "marcos_motores",
+      "rotulo": "Com que idade sentou, engatinhou e andou",
+      "tipo": "texto",
+      "secao": "Gestação, nascimento e desenvolvimento"
+    },
+    {
+      "id": "marcos_fala",
+      "rotulo": "Com que idade falou as primeiras palavras e frases",
+      "tipo": "texto",
+      "secao": "Gestação, nascimento e desenvolvimento"
+    },
+    {
+      "id": "controle_esfincteres",
+      "rotulo": "Com que idade deixou a fralda",
+      "tipo": "texto",
+      "secao": "Gestação, nascimento e desenvolvimento"
+    },
+    {
+      "id": "lateralidade",
+      "rotulo": "Usa mais a mão direita ou a esquerda?",
+      "tipo": "escolha",
+      "secao": "Gestação, nascimento e desenvolvimento",
+      "opcoes": [
+        "Direita",
+        "Esquerda",
+        "Alterna as duas",
+        "Ainda indefinida"
+      ]
+    },
+    {
+      "id": "coordenacao_fina",
+      "rotulo": "Como é a coordenação para recortar, pintar e escrever",
+      "tipo": "textarea",
+      "secao": "Gestação, nascimento e desenvolvimento"
+    },
+    {
+      "id": "doencas_relevantes",
+      "rotulo": "Doenças, cirurgias ou internações importantes",
+      "tipo": "textarea",
+      "secao": "Saúde"
+    },
+    {
+      "id": "convulsoes",
+      "rotulo": "Já teve convulsão?",
+      "tipo": "sim_nao",
+      "secao": "Saúde"
+    },
+    {
+      "id": "medicacao",
+      "rotulo": "Usa medicação de uso contínuo? Qual e em que horário?",
+      "tipo": "textarea",
+      "secao": "Saúde"
+    },
+    {
+      "id": "audicao_visao",
+      "rotulo": "Já fez exame de audição e de vista? Resultados",
+      "tipo": "textarea",
+      "secao": "Saúde"
+    },
+    {
+      "id": "sono",
+      "rotulo": "Como é o sono",
+      "tipo": "escolha",
+      "secao": "Saúde",
+      "opcoes": [
+        "Tranquilo",
+        "Agitado",
+        "Dorme pouco",
+        "Dificuldade para dormir"
+      ]
+    },
+    {
+      "id": "alimentacao",
+      "rotulo": "Como é a alimentação",
+      "tipo": "textarea",
+      "secao": "Saúde"
+    },
+    {
+      "id": "historico_familiar_aprendizagem",
+      "rotulo": "Alguém na família teve dificuldade de aprendizagem?",
+      "tipo": "textarea",
+      "secao": "Saúde"
+    },
+    {
+      "id": "escola_atual",
+      "rotulo": "Escola atual e turma",
+      "tipo": "texto",
+      "secao": "História escolar"
+    },
+    {
+      "id": "turno",
+      "rotulo": "Turno",
+      "tipo": "escolha",
+      "secao": "História escolar",
+      "opcoes": [
+        "Matutino",
+        "Vespertino",
+        "Integral"
+      ]
+    },
+    {
+      "id": "idade_entrou_escola",
+      "rotulo": "Com que idade entrou na escola",
+      "tipo": "texto",
+      "secao": "História escolar"
+    },
+    {
+      "id": "trocou_de_escola",
+      "rotulo": "Já trocou de escola? Quantas vezes e por quê?",
+      "tipo": "textarea",
+      "secao": "História escolar"
+    },
+    {
+      "id": "repetencia",
+      "rotulo": "Já repetiu de ano?",
+      "tipo": "sim_nao",
+      "secao": "História escolar"
+    },
+    {
+      "id": "qual_ano_repetiu",
+      "rotulo": "Qual ano repetiu e por quê",
+      "tipo": "texto",
+      "secao": "História escolar"
+    },
+    {
+      "id": "frequencia",
+      "rotulo": "Falta muito às aulas?",
+      "tipo": "escolha",
+      "secao": "História escolar",
+      "opcoes": [
+        "Não falta",
+        "Falta às vezes",
+        "Falta muito"
+      ]
+    },
+    {
+      "id": "apoio_escolar",
+      "rotulo": "Tem professor de apoio ou AEE na escola?",
+      "tipo": "sim_nao",
+      "secao": "História escolar"
+    },
+    {
+      "id": "relato_escola",
+      "rotulo": "O que a escola relata sobre o desempenho",
+      "tipo": "textarea",
+      "secao": "História escolar"
+    },
+    {
+      "id": "gosta_de_ir",
+      "rotulo": "A criança gosta de ir à escola?",
+      "tipo": "escolha",
+      "secao": "História escolar",
+      "opcoes": [
+        "Gosta",
+        "Vai sem reclamar",
+        "Resiste",
+        "Recusa-se a ir"
+      ]
+    },
+    {
+      "id": "nivel_leitura",
+      "rotulo": "Como está a leitura",
+      "tipo": "escolha",
+      "secao": "Leitura e escrita",
+      "opcoes": [
+        "Ainda não lê",
+        "Lê sílabas",
+        "Lê palavras",
+        "Lê frases",
+        "Lê textos com fluência"
+      ]
+    },
+    {
+      "id": "compreende_leitura",
+      "rotulo": "Compreende o que lê?",
+      "tipo": "escolha",
+      "secao": "Leitura e escrita",
+      "opcoes": [
+        "Compreende bem",
+        "Compreende em parte",
+        "Não compreende",
+        "Não se aplica"
+      ]
+    },
+    {
+      "id": "nivel_escrita",
+      "rotulo": "Como está a escrita",
+      "tipo": "escolha",
+      "secao": "Leitura e escrita",
+      "opcoes": [
+        "Ainda não escreve",
+        "Escreve o nome",
+        "Escreve palavras",
+        "Escreve frases",
+        "Produz textos"
+      ]
+    },
+    {
+      "id": "troca_letras",
+      "rotulo": "Troca, omite ou inverte letras ao escrever?",
+      "tipo": "sim_nao",
+      "secao": "Leitura e escrita"
+    },
+    {
+      "id": "exemplos_trocas",
+      "rotulo": "Exemplos de trocas observadas",
+      "tipo": "texto",
+      "secao": "Leitura e escrita"
+    },
+    {
+      "id": "letra_legivel",
+      "rotulo": "A letra é legível?",
+      "tipo": "escolha",
+      "secao": "Leitura e escrita",
+      "opcoes": [
+        "Sim",
+        "Mais ou menos",
+        "Não"
+      ]
+    },
+    {
+      "id": "copia_quadro",
+      "rotulo": "Consegue copiar do quadro no tempo da turma?",
+      "tipo": "sim_nao",
+      "secao": "Leitura e escrita"
+    },
+    {
+      "id": "reconhece_numeros",
+      "rotulo": "Reconhece os números até quanto",
+      "tipo": "texto",
+      "secao": "Raciocínio e matemática"
+    },
+    {
+      "id": "operacoes",
+      "rotulo": "Quais operações consegue fazer",
+      "tipo": "escolha",
+      "secao": "Raciocínio e matemática",
+      "opcoes": [
+        "Nenhuma",
+        "Adição",
+        "Adição e subtração",
+        "As quatro operações"
+      ]
+    },
+    {
+      "id": "usa_dedos",
+      "rotulo": "Ainda conta nos dedos ou usa material de apoio?",
+      "tipo": "sim_nao",
+      "secao": "Raciocínio e matemática"
+    },
+    {
+      "id": "problemas_matematicos",
+      "rotulo": "Consegue resolver situações-problema?",
+      "tipo": "escolha",
+      "secao": "Raciocínio e matemática",
+      "opcoes": [
+        "Sim",
+        "Com ajuda",
+        "Não"
+      ]
+    },
+    {
+      "id": "nocoes_tempo",
+      "rotulo": "Tem noção de tempo (ontem, hoje, amanhã, horas)?",
+      "tipo": "sim_nao",
+      "secao": "Raciocínio e matemática"
+    },
+    {
+      "id": "tempo_atencao",
+      "rotulo": "Quanto tempo consegue ficar concentrada numa tarefa",
+      "tipo": "texto",
+      "secao": "Atenção, memória e organização"
+    },
+    {
+      "id": "distrai_facil",
+      "rotulo": "Distrai-se com facilidade?",
+      "tipo": "sim_nao",
+      "secao": "Atenção, memória e organização"
+    },
+    {
+      "id": "termina_tarefas",
+      "rotulo": "Termina o que começa?",
+      "tipo": "escolha",
+      "secao": "Atenção, memória e organização",
+      "opcoes": [
+        "Sim",
+        "Às vezes",
+        "Raramente"
+      ]
+    },
+    {
+      "id": "memoria",
+      "rotulo": "Como é a memória para recados, tarefas e conteúdos",
+      "tipo": "textarea",
+      "secao": "Atenção, memória e organização"
+    },
+    {
+      "id": "organizacao_material",
+      "rotulo": "É organizada com o material escolar?",
+      "tipo": "escolha",
+      "secao": "Atenção, memória e organização",
+      "opcoes": [
+        "Sim",
+        "Mais ou menos",
+        "Não"
+      ]
+    },
+    {
+      "id": "segue_instrucoes",
+      "rotulo": "Consegue seguir instruções com mais de um passo?",
+      "tipo": "sim_nao",
+      "secao": "Atenção, memória e organização"
+    },
+    {
+      "id": "relacao_colegas",
+      "rotulo": "Como é a relação com os colegas",
+      "tipo": "textarea",
+      "secao": "Comportamento e socialização"
+    },
+    {
+      "id": "relacao_professores",
+      "rotulo": "Como é a relação com os professores",
+      "tipo": "textarea",
+      "secao": "Comportamento e socialização"
+    },
+    {
+      "id": "reacao_erro",
+      "rotulo": "Como reage quando erra ou não consegue fazer",
+      "tipo": "textarea",
+      "secao": "Comportamento e socialização"
+    },
+    {
+      "id": "autoestima_escolar",
+      "rotulo": "Como ela fala de si quanto a estudar",
+      "tipo": "textarea",
+      "secao": "Comportamento e socialização"
+    },
+    {
+      "id": "comportamento_sala",
+      "rotulo": "Comportamento em sala",
+      "tipo": "escolha",
+      "secao": "Comportamento e socialização",
+      "opcoes": [
+        "Tranquilo",
+        "Agitado",
+        "Retraído",
+        "Opositor",
+        "Varia muito"
+      ]
+    },
+    {
+      "id": "faz_tarefa",
+      "rotulo": "Faz a tarefa de casa?",
+      "tipo": "escolha",
+      "secao": "Rotina de estudos em casa",
+      "opcoes": [
+        "Sozinha",
+        "Com ajuda",
+        "Só com insistência",
+        "Não faz"
+      ]
+    },
+    {
+      "id": "local_estudo",
+      "rotulo": "Onde e em que horário costuma estudar",
+      "tipo": "texto",
+      "secao": "Rotina de estudos em casa"
+    },
+    {
+      "id": "tempo_telas",
+      "rotulo": "Quanto tempo por dia usa celular, TV ou jogos",
+      "tipo": "texto",
+      "secao": "Rotina de estudos em casa"
+    },
+    {
+      "id": "atividades_fora",
+      "rotulo": "Atividades fora da escola (esporte, música, igreja...)",
+      "tipo": "texto",
+      "secao": "Rotina de estudos em casa"
+    },
+    {
+      "id": "do_que_gosta",
+      "rotulo": "Do que a criança mais gosta de fazer",
+      "tipo": "textarea",
+      "secao": "Rotina de estudos em casa"
+    },
+    {
+      "id": "observacoes_sessao",
+      "rotulo": "Observações da profissional durante a entrevista",
+      "tipo": "textarea",
+      "secao": "Observações e hipótese"
+    },
+    {
+      "id": "hipotese",
+      "rotulo": "Hipótese psicopedagógica inicial",
+      "tipo": "textarea",
+      "secao": "Observações e hipótese"
+    },
+    {
+      "id": "encaminhamentos",
+      "rotulo": "Encaminhamentos sugeridos",
+      "tipo": "textarea",
+      "secao": "Observações e hipótese"
+    },
+    {
+      "id": "profissional",
+      "rotulo": "Profissional responsável",
+      "tipo": "texto",
+      "secao": "Observações e hipótese"
+    }
+  ]
+}

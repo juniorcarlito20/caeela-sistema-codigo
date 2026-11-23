@@ -1,0 +1,218 @@
+{
+  "nome": "Anamnese Nutricional",
+  "area": "Nutrição",
+  "campos": [
+    {
+      "id": "turno_do_atendimento",
+      "rotulo": "Turno do atendimento",
+      "tipo": "escolha",
+      "opcoes": [
+        "Matutino",
+        "Vespertino"
+      ],
+      "secao": "Identificação"
+    },
+    {
+      "id": "horario",
+      "rotulo": "Horário",
+      "tipo": "texto",
+      "secao": "Identificação"
+    },
+    {
+      "id": "nome_do_paciente",
+      "rotulo": "Nome do paciente",
+      "tipo": "texto",
+      "secao": "Identificação"
+    },
+    {
+      "id": "data_de_nascimento",
+      "rotulo": "Data de nascimento",
+      "tipo": "data",
+      "secao": "Identificação"
+    },
+    {
+      "id": "idade",
+      "rotulo": "Idade",
+      "tipo": "texto",
+      "secao": "Identificação"
+    },
+    {
+      "id": "endereco",
+      "rotulo": "Endereço",
+      "tipo": "texto",
+      "secao": "Identificação"
+    },
+    {
+      "id": "escola",
+      "rotulo": "Escola",
+      "tipo": "texto",
+      "secao": "Identificação"
+    },
+    {
+      "id": "serie_ano_escolar",
+      "rotulo": "Série/Ano escolar",
+      "tipo": "texto",
+      "secao": "Identificação"
+    },
+    {
+      "id": "nome_do_responsavel",
+      "rotulo": "Nome do responsável",
+      "tipo": "texto",
+      "secao": "Responsável"
+    },
+    {
+      "id": "contato",
+      "rotulo": "Telefone para contato",
+      "tipo": "texto",
+      "secao": "Responsável"
+    },
+    {
+      "id": "peso",
+      "rotulo": "Peso (kg)",
+      "tipo": "texto",
+      "secao": "Medidas"
+    },
+    {
+      "id": "altura",
+      "rotulo": "Altura (m)",
+      "tipo": "texto",
+      "secao": "Medidas"
+    },
+    {
+      "id": "imc",
+      "rotulo": "IMC (calculado)",
+      "tipo": "imc",
+      "de": {
+        "peso": "peso",
+        "altura": "altura"
+      },
+      "nota": "Calculado sozinho a partir do peso e da altura (pode digitar 1,35 ou 135). Em crianças e adolescentes o IMC não se lê pelas faixas de adulto: a nutricionista interpreta pelo percentil para a idade e o sexo (curvas de crescimento).",
+      "secao": "Medidas"
+    },
+    {
+      "id": "ja_passou_por_nutricionista",
+      "rotulo": "Já passou por nutricionista antes?",
+      "tipo": "sim_nao",
+      "secao": "Saúde e histórico"
+    },
+    {
+      "id": "nutricionista_anterior_detalhes",
+      "rotulo": "Se sim, quando e como foi",
+      "tipo": "textarea",
+      "secao": "Saúde e histórico"
+    },
+    {
+      "id": "motivo_da_consulta",
+      "rotulo": "Motivo da consulta",
+      "tipo": "textarea",
+      "secao": "Saúde e histórico"
+    },
+    {
+      "id": "outros_profissionais",
+      "rotulo": "Passa com outros profissionais? Qual?",
+      "tipo": "textarea",
+      "secao": "Saúde e histórico"
+    },
+    {
+      "id": "uso_de_medicamento",
+      "rotulo": "Uso de medicamento",
+      "tipo": "textarea",
+      "secao": "Saúde e histórico"
+    },
+    {
+      "id": "exames_laboratoriais",
+      "rotulo": "Exames laboratoriais",
+      "tipo": "textarea",
+      "secao": "Saúde e histórico"
+    },
+    {
+      "id": "intestino",
+      "rotulo": "Intestino",
+      "tipo": "escolha",
+      "opcoes": [
+        "Ressecado",
+        "Normal",
+        "Solto"
+      ],
+      "secao": "Saúde e histórico"
+    },
+    {
+      "id": "intestino_observacao",
+      "rotulo": "Observação sobre o intestino",
+      "tipo": "texto",
+      "secao": "Saúde e histórico"
+    },
+    {
+      "id": "ingestao_de_agua",
+      "rotulo": "Ingestão de água",
+      "tipo": "texto",
+      "secao": "Alimentação"
+    },
+    {
+      "id": "introducao_alimentar",
+      "rotulo": "Como foi a introdução alimentar",
+      "tipo": "textarea",
+      "secao": "Alimentação"
+    },
+    {
+      "id": "aversao_a_alimentos",
+      "rotulo": "Aversão a algum alimento",
+      "tipo": "textarea",
+      "secao": "Alimentação"
+    },
+    {
+      "id": "preferencia_por_alimentos",
+      "rotulo": "Preferência por algum alimento",
+      "tipo": "textarea",
+      "secao": "Alimentação"
+    },
+    {
+      "id": "aviso_recordatorio",
+      "rotulo": "Anote o que a criança comeu e bebeu em um dia comum (ou no dia de ontem): o que, quanto e a que horas. Preencha só as refeições que ela faz.",
+      "tipo": "aviso",
+      "secao": "Recordatório de 24 horas"
+    },
+    {
+      "id": "cafe_da_manha",
+      "rotulo": "Café da manhã",
+      "tipo": "textarea",
+      "secao": "Recordatório de 24 horas"
+    },
+    {
+      "id": "lanche_da_manha",
+      "rotulo": "Lanche da manhã",
+      "tipo": "textarea",
+      "secao": "Recordatório de 24 horas"
+    },
+    {
+      "id": "almoco",
+      "rotulo": "Almoço",
+      "tipo": "textarea",
+      "secao": "Recordatório de 24 horas"
+    },
+    {
+      "id": "lanche_da_tarde",
+      "rotulo": "Lanche da tarde",
+      "tipo": "textarea",
+      "secao": "Recordatório de 24 horas"
+    },
+    {
+      "id": "jantar",
+      "rotulo": "Jantar",
+      "tipo": "textarea",
+      "secao": "Recordatório de 24 horas"
+    },
+    {
+      "id": "ceia",
+      "rotulo": "Ceia",
+      "tipo": "textarea",
+      "secao": "Recordatório de 24 horas"
+    },
+    {
+      "id": "observacoes_do_recordatorio",
+      "rotulo": "Observações",
+      "tipo": "textarea",
+      "secao": "Recordatório de 24 horas"
+    }
+  ]
+}

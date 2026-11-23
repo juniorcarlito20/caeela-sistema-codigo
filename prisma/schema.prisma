@@ -1,0 +1,444 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Perfil {
+  ADMIN
+  PROFISSIONAL
+  SECRETARIA
+}
+enum SituacaoAluno {
+  ESPERA
+  ATENDIMENTO
+  PAUSA
+  ALTA
+  DESLIGADO
+}
+enum SituacaoAtendimento {
+  AGENDADO
+  REALIZADO
+  FALTOU
+  JUSTIFICOU
+  CANCELADO
+}
+enum TipoRelatorio {
+  ACOMPANHAMENTO
+  PAUSA
+  ALTA
+}
+
+model Usuario {
+  id            String   @id @default(cuid())
+  nome          String
+  usuario       String   @unique          // login curto: nome.area
+  email         String?  @unique          // opcional
+  telefone      String?                   // opcional, só contato — não serve de login
+  senhaHash     String
+  precisaTrocarSenha Boolean @default(true)
+  perfil        Perfil   @default(PROFISSIONAL)
+  areaId        String?
+  area          Area?    @relation(fields: [areaId], references: [id])
+  ativo         Boolean  @default(true)
+  excluidoEm    DateTime?                  // lixeira (não apaga: o histórico guarda o nome)
+  excluidoPor   String?
+  criadoEm      DateTime @default(now())
+  tipoAgenda    TipoAgenda @default(FIXA)    // FIXA, AVULSA_DIRECAO (psiquiatra) ou AVULSA_PROPRIA (assistente social)
+  semanasNoCiclo Int      @default(1)        // 1, 2 ou 4: quantas semanas a agenda dele repete
+  cicloInicio    DateTime?                   // segunda-feira da Semana 1 (nulo com 1 semana)
+  vinculos      Vinculo[]
+  horariosIndisponiveis HorarioIndisponivel[]
+  slotsAtendimento SlotProfissional[]
+  evolucoes     Evolucao[]
+  anamneses     Anamnese[]
+  relatorios    Relatorio[]
+  acessos       RegistroAcesso[]
+  ausencias     Ausencia[]
+  atendimentosRegistrados Atendimento[]
+  transferenciasEnviadas  Transferencia[] @relation("TransferenciaDe")
+  transferenciasRecebidas Transferencia[] @relation("TransferenciaPara")
+  sugestoes     Sugestao[]
+  providenciasFaltas ProvidenciaFalta[]
+  registrosConsulta RegistroConsulta[]
+}
+
+model Area {
+  id       String    @id @default(cuid())
+  nome     String    @unique       // Psicologia, Fisioterapia, Fonoaudiologia...
+  usuarios  Usuario[]
+  vinculos  Vinculo[]
+  modelos   ModeloAnamnese[]
+  sugestoes Sugestao[]
+}
+
+model Aluno {
+  id           String        @id @default(cuid())
+  matricula    String        @unique          // 2026-0001
+  nome         String
+  cpf          String?
+  nascimento   DateTime?
+  escola       String?
+  serie        String?
+  responsavel  String?
+  whatsapp     String?
+  observacoes  String?
+  situacao     SituacaoAluno @default(ESPERA)
+  situacaoDesde DateTime     @default(now())  // quando a situação atual começou (ordena a fila por espera real)
+  pausaRetomarEm DateTime?                    // previsão de retorno, preenchida por quem decidiu a pausa
+  excluidoEm   DateTime?                      // lixeira de 30 dias
+  excluidoPor  String?
+  deFora       Boolean       @default(false)  // pessoa atendida em consulta avulsa que não é aluno do centro
+  ligadoAoAluno String?                       // texto livre, ex.: "mãe de Fulano"
+  criadoEm     DateTime      @default(now())
+  vinculos     Vinculo[]
+  documentos   Documento[]
+  anamneses    Anamnese[]
+  relatorios   Relatorio[]
+  transferencias Transferencia[]
+  sugestoes    Sugestao[]
+  providenciasFaltas ProvidenciaFalta[]
+}
+
+model Vinculo {
+  id             String    @id @default(cuid())
+  alunoId        String
+  aluno          Aluno     @relation(fields: [alunoId], references: [id])
+  profissionalId String
+  profissional   Usuario   @relation(fields: [profissionalId], references: [id])
+  areaId         String
+  area           Area      @relation(fields: [areaId], references: [id])
+  inicio         DateTime  @default(now())
+  fim            DateTime?                    // nulo = vigente
+  motivoFim      SituacaoAluno?               // por que esse vínculo específico encerrou (pausa/alta/desligado) —
+                                               // guardado mesmo quando o aluno continua com outros profissionais
+  situacaoAlunoAntes  SituacaoAluno?          // situação do aluno um instante antes deste encerramento —
+  situacaoDesdeAntes  DateTime?               // só preenchido quando o encerramento mudou a situação geral
+  pausaRetomarEmAntes DateTime?               // (último vínculo) — permite desfazer sem "adivinhar" o estado anterior
+  horarios       Horario[]
+  atendimentos   Atendimento[]
+  @@index([alunoId, fim])
+  @@index([profissionalId, fim])
+}
+
+model Horario {
+  id         String   @id @default(cuid())
+  vinculoId  String
+  vinculo    Vinculo  @relation(fields: [vinculoId], references: [id])
+  diaSemana  Int                              // 1 = segunda ... 5 = sexta
+  hora       String                           // "08:50"
+  duracaoMin Int      @default(40)
+  // LEGADO (congelado desde 2026-10-08, só o script migrar-semanas lê): grupo antigo.
+  emGrupo    Boolean  @default(false)
+  // LEGADO (congelado desde 2026-10-08, só o script migrar-semanas lê): grupo antigo.
+  grupo      String?                          // "Grupo 01"
+  vigenteAte DateTime?
+  local      String?                          // onde acontece; vazio = no centro
+  excluidoEm DateTime?
+  excluidoPor String?
+  semanas          Int       @default(1)     // máscara: bit 0 = Semana 1 … bit 3 = Semana 4
+  // LEGADO (congelado desde 2026-10-08, só o script migrar-semanas lê): grupo e rodízio antigos.
+  cicloSemanas     Int       @default(1)
+  cicloOffset      Int       @default(0)
+  semanaReferencia DateTime?
+}
+
+model HorarioIndisponivel {
+  id             String   @id @default(cuid())
+  profissionalId String
+  profissional   Usuario  @relation(fields: [profissionalId], references: [id])
+  diaSemana      Int                              // 1 = segunda ... 5 = sexta
+  hora           String                           // um dos GRADE_HORARIOS
+  criadoEm       DateTime @default(now())
+  criadoPor      String                           // Usuario.id de quem marcou — só auditoria leve, sem relação (mesmo padrão de Horario.excluidoPor)
+  @@unique([profissionalId, diaSemana, hora])
+  @@index([profissionalId])
+}
+
+// Horários de atendimento de cada profissional, por dia da semana, cada um com a sua duração.
+// Sem nenhuma linha, vale a grade padrão do centro (src/domain/grade.ts).
+model SlotProfissional {
+  id             String   @id @default(cuid())
+  profissionalId String
+  profissional   Usuario  @relation(fields: [profissionalId], references: [id])
+  diaSemana      Int                              // 1 = segunda ... 5 = sexta
+  hora           String                           // "07:00"
+  duracaoMin     Int      @default(40)
+  vagas          Int      @default(1)             // 1 = atendimento individual; 2 ou mais = horário de grupo
+  @@unique([profissionalId, diaSemana, hora])
+  @@index([profissionalId])
+}
+
+model Atendimento {
+  id           String              @id @default(cuid())
+  vinculoId    String
+  vinculo      Vinculo             @relation(fields: [vinculoId], references: [id])
+  data         DateTime
+  hora         String
+  situacao     SituacaoAtendimento @default(AGENDADO)
+  assinaturaId String?                        // chave do arquivo no bucket
+  assinadoEm   DateTime?
+  dispositivo  String?
+  observacao   String?                          // ex.: "Profissional ausente: FÉRIAS"
+  ausenciaId   String?
+  ausencia     Ausencia?    @relation(fields: [ausenciaId], references: [id])
+  avulso       Boolean             @default(false)  // consulta marcada por data/hora, sem horário fixo
+  evolucao     Evolucao?
+  registroConsulta RegistroConsulta?
+  lembrete     Lembrete?
+  confirmadoEm    DateTime?                      // quando a equipe marcou a situação
+  registradoPorId String?                        // quem (usuário logado) confirmou
+  registradoPor   Usuario?  @relation(fields: [registradoPorId], references: [id])
+  @@unique([vinculoId, data, hora])
+  @@index([data])
+}
+
+model Evolucao {
+  id             String      @id @default(cuid())
+  atendimentoId  String      @unique
+  atendimento    Atendimento @relation(fields: [atendimentoId], references: [id])
+  autorId        String
+  autor          Usuario     @relation(fields: [autorId], references: [id])
+  atividade      String
+  objetivo       String
+  observacoes    String?
+  criadoEm       DateTime    @default(now())
+  atualizadoEm   DateTime    @updatedAt
+  excluidoEm     DateTime?
+  excluidoPor    String?
+}
+
+enum TipoAgenda {
+  FIXA
+  AVULSA_DIRECAO
+  AVULSA_PROPRIA
+}
+
+enum TipoConsulta {
+  CONSULTA_NO_CENTRO
+  VISITA_DOMICILIAR
+  TELEFONE
+  REUNIAO_REDE
+}
+
+model RegistroConsulta {
+  id              String       @id @default(cuid())
+  atendimentoId   String       @unique
+  atendimento     Atendimento  @relation(fields: [atendimentoId], references: [id])
+  autorId         String
+  autor           Usuario      @relation(fields: [autorId], references: [id])
+  tipo            TipoConsulta
+  presentes       String?
+  registro        String
+  encaminhamentos String[]
+  proximoPasso    String?
+  retornoEm       DateTime?
+  criadoEm        DateTime     @default(now())
+  atualizadoEm    DateTime     @updatedAt
+  excluidoEm      DateTime?
+  excluidoPor     String?
+}
+
+model ModeloAnamnese {
+  id        String     @id @default(cuid())
+  nome      String     @unique
+  areaId    String?
+  area      Area?      @relation(fields: [areaId], references: [id])
+  campos    Json                                  // [{ id, rotulo, tipo, opcoes?, secao }]
+  ativo     Boolean    @default(true)
+  anamneses Anamnese[]
+}
+
+model Anamnese {
+  id        String         @id @default(cuid())
+  alunoId   String
+  aluno     Aluno          @relation(fields: [alunoId], references: [id])
+  autorId   String
+  autor     Usuario        @relation(fields: [autorId], references: [id])
+  modeloId  String
+  modelo    ModeloAnamnese @relation(fields: [modeloId], references: [id])
+  respostas Json
+  criadoEm  DateTime       @default(now())
+}
+
+model Documento {
+  id        String    @id @default(cuid())
+  alunoId   String
+  aluno     Aluno     @relation(fields: [alunoId], references: [id])
+  tipo      String                              // LAUDO, ANAMNESE, PESSOAL, AUTORIZACAO, RELATORIO_MEDICO, RELATORIO_CENTRO
+  chave     String                              // chave no bucket
+  nomeArquivo String
+  descricao String?
+  enviadoPor String
+  excluidoEm DateTime?
+  excluidoPor String?
+  criadoEm  DateTime  @default(now())
+}
+
+model Relatorio {
+  id        String        @id @default(cuid())
+  alunoId   String
+  aluno     Aluno         @relation(fields: [alunoId], references: [id])
+  autorId   String
+  autor     Usuario       @relation(fields: [autorId], references: [id])
+  tipo      TipoRelatorio
+  texto     String
+  pdfChave  String?
+  comAnamnese Boolean     @default(false)   // verdadeiro: o PDF leva anamnese(s) em anexo e NÃO vai para a pasta Documentos
+  criadoEm  DateTime      @default(now())
+  excluidoEm  DateTime?                     // lixeira de 30 dias
+  excluidoPor String?
+}
+
+model Lembrete {
+  id            String      @id @default(cuid())
+  atendimentoId String      @unique
+  atendimento   Atendimento @relation(fields: [atendimentoId], references: [id])
+  token         String      @unique
+  enviadoEm     DateTime?
+  confirmadoEm  DateTime?
+  criadoEm      DateTime    @default(now())   // o link vale 48 horas
+  resposta      RespostaLembrete?
+}
+
+enum RespostaLembrete {
+  VAI
+  NAO_VAI
+}
+
+model RegistroAcesso {
+  id        String   @id @default(cuid())
+  usuarioId String
+  usuario   Usuario  @relation(fields: [usuarioId], references: [id])
+  acao      String                             // ABRIU_PRONTUARIO, GEROU_RELATORIO...
+  alvo      String
+  criadoEm  DateTime @default(now())
+  mudanca      Json?                           // antes/depois dos horários, para dar para desfazer
+  desfeitoEm   DateTime?
+  desfeitoPorId String?
+  @@index([criadoEm])
+}
+
+model Configuracao {
+  id          String  @id @default("unica")
+  instituicao String  @default("CAEELA")
+  logoChave   String?
+  corPrimaria String  @default("#1766c9")
+  corSecundaria String @default("#2ea84a")
+  endereco    String?
+  email       String?
+  ultimoBackupEm DateTime?
+  ultimoBackupOk Boolean  @default(false)
+  semanasMigradasEm DateTime?                // quando o rodízio antigo virou semanas
+}
+
+enum TipoAusencia {
+  FALTA
+  ATESTADO
+  LICENCA
+  FERIAS
+  CAPACITACAO
+  OUTRO
+}
+
+model Ausencia {
+  id             String       @id @default(cuid())
+  profissionalId String
+  profissional   Usuario      @relation(fields: [profissionalId], references: [id])
+  tipo           TipoAusencia
+  inicio         DateTime
+  fim            DateTime
+  justificativa  String?
+  documentoChave String?                      // atestado digitalizado
+  registradoPor  String
+  criadoEm       DateTime     @default(now())
+  excluidoEm     DateTime?
+  atendimentos   Atendimento[]
+  @@index([profissionalId, inicio])
+}
+
+// Transferência de um horário entre profissionais, feita pela direção.
+// É o único caso em que um profissional vê o que outro escreveu: o histórico
+// do aluno passa para quem recebe, a partir da data da transferência.
+model Transferencia {
+  id                 String   @id @default(cuid())
+  alunoId            String
+  aluno              Aluno    @relation(fields: [alunoId], references: [id])
+  deProfissionalId   String
+  deProfissional     Usuario  @relation("TransferenciaDe", fields: [deProfissionalId], references: [id])
+  paraProfissionalId String
+  paraProfissional   Usuario  @relation("TransferenciaPara", fields: [paraProfissionalId], references: [id])
+  vinculoAnteriorId  String?
+  vinculoNovoId      String?
+  criadoEm           DateTime @default(now())
+  @@index([alunoId, paraProfissionalId])
+}
+
+// Dia em que o centro inteiro não atende (feriado, decreto, reunião). Uma linha por data;
+// desmarcar apaga a linha (o Histórico guarda quem fez).
+model DiaSemAtendimento {
+  id          String   @id @default(cuid())
+  data        DateTime @unique                 // o dia, ao meio-dia (como Atendimento.data)
+  motivo      String                           // aparece para os profissionais e no aviso às famílias
+  criadoPorId String                           // Usuario.id de quem marcou — só auditoria, sem relação
+  criadoEm    DateTime @default(now())
+}
+
+enum TipoSugestao {
+  PROFISSIONAL_DO_CENTRO
+  EXAME_OU_CONSULTA
+  OUTRA
+}
+
+enum SituacaoSugestao {
+  PENDENTE
+  RESOLVIDA
+  DESCARTADA
+}
+
+// Sugestão de um profissional à direção sobre um aluno (outro profissional do centro, exame,
+// consulta fora do centro…). A direção resolve ou descarta; nada é apagado.
+model Sugestao {
+  id                String           @id @default(cuid())
+  alunoId           String
+  aluno             Aluno            @relation(fields: [alunoId], references: [id])
+  autorId           String
+  autor             Usuario          @relation(fields: [autorId], references: [id])
+  tipo              TipoSugestao
+  areaId            String?                          // só no tipo PROFISSIONAL_DO_CENTRO
+  area              Area?            @relation(fields: [areaId], references: [id])
+  texto             String
+  situacao          SituacaoSugestao @default(PENDENTE)
+  observacaoDirecao String?                          // o que a direção respondeu ao resolver ou descartar
+  fechadaPorId      String?                          // Usuario.id da direção — só auditoria, sem relação
+  fechadaEm         DateTime?
+  criadoEm          DateTime         @default(now())
+
+  @@index([situacao, criadoEm])
+  @@index([alunoId])
+}
+
+enum TipoProvidenciaFalta {
+  CONTATO_FAMILIA
+  ASSISTENCIA_SOCIAL
+  OUTRA
+}
+
+// O que a direção fez diante de faltas seguidas de um aluno. "cobreAte" é o dia da última falta
+// que a providência cobre: o aviso só volta com novas faltas depois dele.
+model ProvidenciaFalta {
+  id         String               @id @default(cuid())
+  alunoId    String
+  aluno      Aluno                @relation(fields: [alunoId], references: [id])
+  tipo       TipoProvidenciaFalta
+  observacao String?
+  cobreAte   DateTime             // dia da última falta que esta providência cobre
+  autorId    String
+  autor      Usuario              @relation(fields: [autorId], references: [id])
+  criadoEm   DateTime             @default(now())
+
+  @@index([alunoId])
+}

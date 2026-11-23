@@ -1,0 +1,578 @@
+{
+  "nome": "Formulário Socioassistencial",
+  "area": "Serviço Social",
+  "campos": [
+    {
+      "id": "aviso_dados_sensiveis",
+      "rotulo": "Formulário do Serviço Social. Dados sensíveis: só quem preencheu e a direção veem. Preencha só o que for adequado ao atendimento.",
+      "tipo": "aviso",
+      "secao": "Atendimento"
+    },
+    {
+      "id": "unidade_escolar",
+      "rotulo": "Unidade escolar",
+      "tipo": "texto",
+      "secao": "Atendimento"
+    },
+    {
+      "id": "data_do_atendimento",
+      "rotulo": "Data do atendimento",
+      "tipo": "data",
+      "secao": "Atendimento"
+    },
+    {
+      "id": "tipo_de_atendimento",
+      "rotulo": "Tipo de atendimento",
+      "tipo": "escolha",
+      "opcoes": [
+        "Atendimento no centro",
+        "Visita domiciliar",
+        "Contato por telefone"
+      ],
+      "secao": "Atendimento"
+    },
+    {
+      "id": "quem_prestou_as_informacoes",
+      "rotulo": "Quem prestou as informações",
+      "tipo": "escolha",
+      "opcoes": [
+        "Mãe",
+        "Pai",
+        "Avó ou avô",
+        "Outro responsável",
+        "O próprio atendido"
+      ],
+      "secao": "Atendimento"
+    },
+    {
+      "id": "nome_do_atendido",
+      "rotulo": "Nome do atendido",
+      "tipo": "texto",
+      "secao": "Identificação pessoal"
+    },
+    {
+      "id": "data_de_nascimento",
+      "rotulo": "Data de nascimento",
+      "tipo": "data",
+      "secao": "Identificação pessoal"
+    },
+    {
+      "id": "idade",
+      "rotulo": "Idade",
+      "tipo": "texto",
+      "secao": "Identificação pessoal"
+    },
+    {
+      "id": "sexo",
+      "rotulo": "Sexo",
+      "tipo": "escolha",
+      "opcoes": [
+        "Feminino",
+        "Masculino"
+      ],
+      "secao": "Identificação pessoal"
+    },
+    {
+      "id": "cor_raca",
+      "rotulo": "Cor/raça",
+      "tipo": "escolha",
+      "opcoes": [
+        "Branca",
+        "Preta",
+        "Parda",
+        "Amarela",
+        "Indígena",
+        "Prefere não informar"
+      ],
+      "secao": "Identificação pessoal"
+    },
+    {
+      "id": "rg",
+      "rotulo": "RG",
+      "tipo": "texto",
+      "secao": "Identificação pessoal"
+    },
+    {
+      "id": "orgao_emissor",
+      "rotulo": "Órgão emissor",
+      "tipo": "texto",
+      "secao": "Identificação pessoal"
+    },
+    {
+      "id": "cpf",
+      "rotulo": "CPF",
+      "tipo": "texto",
+      "secao": "Identificação pessoal"
+    },
+    {
+      "id": "cartao_do_sus",
+      "rotulo": "Cartão do SUS",
+      "tipo": "texto",
+      "secao": "Identificação pessoal"
+    },
+    {
+      "id": "nis_numero_do_cadastro_unico",
+      "rotulo": "NIS (Número do Cadastro Único)",
+      "tipo": "texto",
+      "secao": "Identificação pessoal"
+    },
+    {
+      "id": "naturalidade",
+      "rotulo": "Naturalidade",
+      "tipo": "texto",
+      "secao": "Identificação pessoal"
+    },
+    {
+      "id": "nome_do_pai",
+      "rotulo": "Nome do pai",
+      "tipo": "texto",
+      "secao": "Identificação pessoal"
+    },
+    {
+      "id": "nome_da_mae",
+      "rotulo": "Nome da mãe",
+      "tipo": "texto",
+      "secao": "Identificação pessoal"
+    },
+    {
+      "id": "telefone",
+      "rotulo": "Telefone",
+      "tipo": "texto",
+      "secao": "Identificação pessoal"
+    },
+    {
+      "id": "estado_civil",
+      "rotulo": "Estado civil",
+      "tipo": "escolha",
+      "opcoes": [
+        "Solteiro(a)",
+        "Casado(a)",
+        "Viúvo(a)",
+        "Separado(a)",
+        "Divorciado(a)",
+        "Outro"
+      ],
+      "secao": "Identificação pessoal"
+    },
+    {
+      "id": "escolaridade",
+      "rotulo": "Escolaridade",
+      "tipo": "texto",
+      "secao": "Identificação pessoal"
+    },
+    {
+      "id": "endereco",
+      "rotulo": "Endereço",
+      "tipo": "texto",
+      "secao": "Identificação pessoal"
+    },
+    {
+      "id": "bairro",
+      "rotulo": "Bairro",
+      "tipo": "texto",
+      "secao": "Identificação pessoal"
+    },
+    {
+      "id": "cidade",
+      "rotulo": "Cidade",
+      "tipo": "texto",
+      "secao": "Identificação pessoal"
+    },
+    {
+      "id": "zona",
+      "rotulo": "Zona",
+      "tipo": "escolha",
+      "opcoes": [
+        "Urbana",
+        "Rural"
+      ],
+      "secao": "Identificação pessoal"
+    },
+    {
+      "id": "quantas_pessoas_moram_na_casa",
+      "rotulo": "Quantas pessoas moram na casa",
+      "tipo": "texto",
+      "secao": "Caracterização do domicílio"
+    },
+    {
+      "id": "condicao_de_moradia",
+      "rotulo": "Condição de moradia",
+      "tipo": "escolha",
+      "opcoes": [
+        "Própria",
+        "Alugada",
+        "Cedida",
+        "Outra"
+      ],
+      "secao": "Caracterização do domicílio"
+    },
+    {
+      "id": "tipo_de_construcao",
+      "rotulo": "Tipo de construção",
+      "tipo": "escolha",
+      "opcoes": [
+        "Alvenaria",
+        "Madeira",
+        "Adobe",
+        "Outro"
+      ],
+      "secao": "Caracterização do domicílio"
+    },
+    {
+      "id": "piso",
+      "rotulo": "Piso",
+      "tipo": "escolha",
+      "opcoes": [
+        "Cimento",
+        "Cerâmica",
+        "Outro"
+      ],
+      "secao": "Caracterização do domicílio"
+    },
+    {
+      "id": "iluminacao",
+      "rotulo": "Iluminação",
+      "tipo": "escolha",
+      "opcoes": [
+        "Energia elétrica",
+        "Energia solar",
+        "Não possui"
+      ],
+      "secao": "Caracterização do domicílio"
+    },
+    {
+      "id": "agua",
+      "rotulo": "Água",
+      "tipo": "escolha",
+      "opcoes": [
+        "Rede pública",
+        "Cisterna",
+        "Poço",
+        "Outra"
+      ],
+      "secao": "Caracterização do domicílio"
+    },
+    {
+      "id": "tratamento_da_agua",
+      "rotulo": "Tratamento da água",
+      "tipo": "escolha",
+      "opcoes": [
+        "Filtrada",
+        "Fervida",
+        "Cloro",
+        "Sem tratamento"
+      ],
+      "secao": "Caracterização do domicílio"
+    },
+    {
+      "id": "esgoto",
+      "rotulo": "Esgoto",
+      "tipo": "escolha",
+      "opcoes": [
+        "Rede pública",
+        "Fossa",
+        "Céu aberto"
+      ],
+      "secao": "Caracterização do domicílio"
+    },
+    {
+      "id": "coleta_de_lixo",
+      "rotulo": "Coleta de lixo",
+      "tipo": "sim_nao",
+      "secao": "Caracterização do domicílio"
+    },
+    {
+      "id": "possui_sala",
+      "rotulo": "Possui sala",
+      "tipo": "sim_nao",
+      "secao": "Caracterização do domicílio"
+    },
+    {
+      "id": "possui_cozinha",
+      "rotulo": "Possui cozinha",
+      "tipo": "sim_nao",
+      "secao": "Caracterização do domicílio"
+    },
+    {
+      "id": "possui_banheiro",
+      "rotulo": "Possui banheiro",
+      "tipo": "sim_nao",
+      "secao": "Caracterização do domicílio"
+    },
+    {
+      "id": "quantos_quartos",
+      "rotulo": "Quantos quartos",
+      "tipo": "texto",
+      "secao": "Caracterização do domicílio"
+    },
+    {
+      "id": "observacoes_sobre_o_domicilio",
+      "rotulo": "Observações sobre o domicílio",
+      "tipo": "textarea",
+      "secao": "Caracterização do domicílio"
+    },
+    {
+      "id": "ocupacao",
+      "rotulo": "Ocupação",
+      "tipo": "texto",
+      "secao": "Situação socioeconômica"
+    },
+    {
+      "id": "renda_do_atendido",
+      "rotulo": "Renda do atendido",
+      "tipo": "texto",
+      "secao": "Situação socioeconômica"
+    },
+    {
+      "id": "ha_aposentado_na_familia",
+      "rotulo": "Há aposentado na família?",
+      "tipo": "sim_nao",
+      "secao": "Situação socioeconômica"
+    },
+    {
+      "id": "quem_e_o_aposentado",
+      "rotulo": "Quem é o aposentado",
+      "tipo": "texto",
+      "secao": "Situação socioeconômica"
+    },
+    {
+      "id": "inscrito_no_cadastro_unico",
+      "rotulo": "Inscrito no Cadastro Único?",
+      "tipo": "escolha",
+      "opcoes": [
+        "Sim",
+        "Não",
+        "Não sabe"
+      ],
+      "secao": "Situação socioeconômica"
+    },
+    {
+      "id": "cadastro_unico_atualizado",
+      "rotulo": "Cadastro Único atualizado?",
+      "tipo": "sim_nao",
+      "secao": "Situação socioeconômica"
+    },
+    {
+      "id": "recebe_bolsa_familia",
+      "rotulo": "Recebe Bolsa Família?",
+      "tipo": "sim_nao",
+      "secao": "Situação socioeconômica"
+    },
+    {
+      "id": "recebe_bpc",
+      "rotulo": "Recebe BPC?",
+      "tipo": "sim_nao",
+      "secao": "Situação socioeconômica"
+    },
+    {
+      "id": "recebe_auxilio_gas",
+      "rotulo": "Recebe Auxílio Gás?",
+      "tipo": "sim_nao",
+      "secao": "Situação socioeconômica"
+    },
+    {
+      "id": "outro_beneficio_qual",
+      "rotulo": "Outro benefício: qual",
+      "tipo": "texto",
+      "secao": "Situação socioeconômica"
+    },
+    {
+      "id": "valor_dos_beneficios",
+      "rotulo": "Valor dos benefícios",
+      "tipo": "texto",
+      "secao": "Situação socioeconômica"
+    },
+    {
+      "id": "renda_total_da_familia_incluindo_beneficios",
+      "rotulo": "Renda total da família, incluindo benefícios",
+      "tipo": "texto",
+      "secao": "Situação socioeconômica"
+    },
+    {
+      "id": "renda_por_pessoa_da_familia",
+      "rotulo": "Renda por pessoa da família",
+      "tipo": "escolha",
+      "opcoes": [
+        "Até 1/4 de salário mínimo",
+        "Até 1/2 salário mínimo",
+        "Até 1 salário mínimo",
+        "Acima de 1 salário mínimo"
+      ],
+      "secao": "Situação socioeconômica"
+    },
+    {
+      "id": "aviso_composicao_familiar",
+      "rotulo": "Uma pessoa por linha: nome, parentesco, data de nascimento, ocupação e renda.",
+      "tipo": "aviso",
+      "secao": "Composição familiar"
+    },
+    {
+      "id": "pessoas_da_familia",
+      "rotulo": "Pessoas da família",
+      "tipo": "textarea",
+      "secao": "Composição familiar"
+    },
+    {
+      "id": "alguem_usa_alcool",
+      "rotulo": "Alguém usa álcool?",
+      "tipo": "sim_nao",
+      "secao": "Saúde da família"
+    },
+    {
+      "id": "alguem_usa_drogas_ilicitas",
+      "rotulo": "Alguém usa drogas ilícitas?",
+      "tipo": "sim_nao",
+      "secao": "Saúde da família"
+    },
+    {
+      "id": "alguem_usa_cigarro",
+      "rotulo": "Alguém usa cigarro?",
+      "tipo": "sim_nao",
+      "secao": "Saúde da família"
+    },
+    {
+      "id": "quem_usa",
+      "rotulo": "Quem usa",
+      "tipo": "texto",
+      "secao": "Saúde da família"
+    },
+    {
+      "id": "ha_pessoa_com_transtorno_mental",
+      "rotulo": "Há pessoa com transtorno mental?",
+      "tipo": "sim_nao",
+      "secao": "Saúde da família"
+    },
+    {
+      "id": "quem_tem_transtorno_mental",
+      "rotulo": "Quem tem transtorno mental",
+      "tipo": "texto",
+      "secao": "Saúde da família"
+    },
+    {
+      "id": "alguem_tem_problema_de_saude",
+      "rotulo": "Alguém tem problema de saúde?",
+      "tipo": "sim_nao",
+      "secao": "Saúde da família"
+    },
+    {
+      "id": "quem_e_qual_problema_de_saude",
+      "rotulo": "Quem e qual problema de saúde",
+      "tipo": "texto",
+      "secao": "Saúde da família"
+    },
+    {
+      "id": "acompanhada_pelo_posto_de_saude_ubs_ou_agente_de_saude",
+      "rotulo": "Acompanhada pelo posto de saúde (UBS) ou agente de saúde?",
+      "tipo": "sim_nao",
+      "secao": "Saúde da família"
+    },
+    {
+      "id": "acompanhada_pelo_cras",
+      "rotulo": "Acompanhada pelo CRAS?",
+      "tipo": "sim_nao",
+      "secao": "Rede de apoio e proteção"
+    },
+    {
+      "id": "acompanhada_pelo_creas",
+      "rotulo": "Acompanhada pelo CREAS?",
+      "tipo": "sim_nao",
+      "secao": "Rede de apoio e proteção"
+    },
+    {
+      "id": "acompanhada_pelo_conselho_tutelar",
+      "rotulo": "Acompanhada pelo Conselho Tutelar?",
+      "tipo": "sim_nao",
+      "secao": "Rede de apoio e proteção"
+    },
+    {
+      "id": "tem_rede_de_apoio_avos_vizinhos_igreja",
+      "rotulo": "Tem rede de apoio (avós, vizinhos, igreja)?",
+      "tipo": "sim_nao",
+      "secao": "Rede de apoio e proteção"
+    },
+    {
+      "id": "qual_rede_de_apoio",
+      "rotulo": "Qual rede de apoio",
+      "tipo": "texto",
+      "secao": "Rede de apoio e proteção"
+    },
+    {
+      "id": "aviso_perguntas_sensiveis",
+      "rotulo": "As perguntas abaixo são sensíveis: preencha só se for adequado.",
+      "tipo": "aviso",
+      "secao": "Rede de apoio e proteção"
+    },
+    {
+      "id": "inseguranca_alimentar",
+      "rotulo": "Insegurança alimentar?",
+      "tipo": "sim_nao",
+      "secao": "Rede de apoio e proteção"
+    },
+    {
+      "id": "trabalho_infantil",
+      "rotulo": "Trabalho infantil?",
+      "tipo": "sim_nao",
+      "secao": "Rede de apoio e proteção"
+    },
+    {
+      "id": "violencia_na_familia",
+      "rotulo": "Violência na família?",
+      "tipo": "sim_nao",
+      "secao": "Rede de apoio e proteção"
+    },
+    {
+      "id": "frequenta_a_escola_regularmente",
+      "rotulo": "Frequenta a escola regularmente?",
+      "tipo": "sim_nao",
+      "secao": "Escola"
+    },
+    {
+      "id": "usa_transporte_escolar",
+      "rotulo": "Usa transporte escolar?",
+      "tipo": "sim_nao",
+      "secao": "Escola"
+    },
+    {
+      "id": "encaminhado_ao_cras",
+      "rotulo": "Encaminhado ao CRAS",
+      "tipo": "sim_nao",
+      "secao": "Observações e encaminhamentos"
+    },
+    {
+      "id": "encaminhado_ao_creas",
+      "rotulo": "Encaminhado ao CREAS",
+      "tipo": "sim_nao",
+      "secao": "Observações e encaminhamentos"
+    },
+    {
+      "id": "encaminhado_a_ubs_saude",
+      "rotulo": "Encaminhado à UBS/saúde",
+      "tipo": "sim_nao",
+      "secao": "Observações e encaminhamentos"
+    },
+    {
+      "id": "encaminhado_ao_conselho_tutelar",
+      "rotulo": "Encaminhado ao Conselho Tutelar",
+      "tipo": "sim_nao",
+      "secao": "Observações e encaminhamentos"
+    },
+    {
+      "id": "encaminhado_a_defensoria_juridico",
+      "rotulo": "Encaminhado à Defensoria/jurídico",
+      "tipo": "sim_nao",
+      "secao": "Observações e encaminhamentos"
+    },
+    {
+      "id": "outro_encaminhamento",
+      "rotulo": "Outro encaminhamento",
+      "tipo": "texto",
+      "secao": "Observações e encaminhamentos"
+    },
+    {
+      "id": "observacoes_e_encaminhamentos",
+      "rotulo": "Observações e encaminhamentos",
+      "tipo": "textarea",
+      "secao": "Observações e encaminhamentos"
+    }
+  ]
+}

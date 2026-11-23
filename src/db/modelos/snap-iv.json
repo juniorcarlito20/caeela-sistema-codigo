@@ -1,0 +1,74 @@
+{
+  "nome": "Escala SNAP-IV (26 itens)",
+  "area": null,
+  "campos": [
+    {
+      "id": "aviso_instrumento",
+      "rotulo": "Escala SNAP-IV (versão MTA-SNAP-IV, 26 itens), tradução brasileira de Mattos e colaboradores (Revista de Psiquiatria do Rio Grande do Sul, 2006;28(3):290-7), instrumento de domínio público. Pergunte o quanto cada frase descreve a criança e marque a resposta. É uma escala de triagem: não faz diagnóstico.",
+      "tipo": "aviso",
+      "secao": "Aplicação"
+    },
+    { "id": "data_aplicacao", "rotulo": "Data da aplicação", "tipo": "data", "secao": "Aplicação" },
+    {
+      "id": "quem_respondeu",
+      "rotulo": "Quem respondeu às perguntas",
+      "tipo": "escolha",
+      "opcoes": ["Mãe", "Pai", "Outro responsável", "Professor(a)", "Outra pessoa"],
+      "secao": "Aplicação"
+    },
+
+    { "id": "snap_01", "rotulo": "1. Não consegue prestar muita atenção a detalhes ou comete erros por descuido nos trabalhos da escola ou tarefas", "tipo": "escala", "opcoes": ["Nem um pouco", "Só um pouco", "Bastante", "Demais"], "secao": "Desatenção (itens 1 a 9)" },
+    { "id": "snap_02", "rotulo": "2. Tem dificuldade de manter a atenção em tarefas ou atividades de lazer", "tipo": "escala", "opcoes": ["Nem um pouco", "Só um pouco", "Bastante", "Demais"], "secao": "Desatenção (itens 1 a 9)" },
+    { "id": "snap_03", "rotulo": "3. Parece não estar ouvindo quando se fala diretamente com ele", "tipo": "escala", "opcoes": ["Nem um pouco", "Só um pouco", "Bastante", "Demais"], "secao": "Desatenção (itens 1 a 9)" },
+    { "id": "snap_04", "rotulo": "4. Não segue instruções até o fim e não termina deveres da escola, tarefas ou obrigações", "tipo": "escala", "opcoes": ["Nem um pouco", "Só um pouco", "Bastante", "Demais"], "secao": "Desatenção (itens 1 a 9)" },
+    { "id": "snap_05", "rotulo": "5. Tem dificuldade para organizar tarefas e atividades", "tipo": "escala", "opcoes": ["Nem um pouco", "Só um pouco", "Bastante", "Demais"], "secao": "Desatenção (itens 1 a 9)" },
+    { "id": "snap_06", "rotulo": "6. Evita, não gosta ou se envolve contra a vontade em tarefas que exigem esforço mental prolongado", "tipo": "escala", "opcoes": ["Nem um pouco", "Só um pouco", "Bastante", "Demais"], "secao": "Desatenção (itens 1 a 9)" },
+    { "id": "snap_07", "rotulo": "7. Perde coisas necessárias para atividades (por exemplo: brinquedos, deveres da escola, lápis ou livros)", "tipo": "escala", "opcoes": ["Nem um pouco", "Só um pouco", "Bastante", "Demais"], "secao": "Desatenção (itens 1 a 9)" },
+    { "id": "snap_08", "rotulo": "8. Distrai-se com estímulos externos", "tipo": "escala", "opcoes": ["Nem um pouco", "Só um pouco", "Bastante", "Demais"], "secao": "Desatenção (itens 1 a 9)" },
+    { "id": "snap_09", "rotulo": "9. É esquecido em atividades do dia a dia", "tipo": "escala", "opcoes": ["Nem um pouco", "Só um pouco", "Bastante", "Demais"], "secao": "Desatenção (itens 1 a 9)" },
+    {
+      "id": "resumo_desatencao",
+      "rotulo": "Resumo da desatenção",
+      "tipo": "resumo",
+      "secao": "Desatenção (itens 1 a 9)",
+      "minimo": 6,
+      "nota": "Referência do questionário (tradução validada pela UFRJ e pela UFRGS, divulgada pela ABDA): 6 ou mais itens marcados como “Bastante” ou “Demais” indicam mais sintomas de desatenção que o esperado numa criança ou adolescente. É um instrumento de triagem: o diagnóstico exige avaliação clínica completa."
+    },
+
+    { "id": "snap_10", "rotulo": "10. Mexe com as mãos ou os pés ou se remexe na cadeira", "tipo": "escala", "opcoes": ["Nem um pouco", "Só um pouco", "Bastante", "Demais"], "secao": "Hiperatividade e impulsividade (itens 10 a 18)" },
+    { "id": "snap_11", "rotulo": "11. Sai do lugar na sala de aula ou em outras situações em que se espera que fique sentado", "tipo": "escala", "opcoes": ["Nem um pouco", "Só um pouco", "Bastante", "Demais"], "secao": "Hiperatividade e impulsividade (itens 10 a 18)" },
+    { "id": "snap_12", "rotulo": "12. Corre de um lado para outro ou sobe demais nas coisas em situações em que isto é inapropriado", "tipo": "escala", "opcoes": ["Nem um pouco", "Só um pouco", "Bastante", "Demais"], "secao": "Hiperatividade e impulsividade (itens 10 a 18)" },
+    { "id": "snap_13", "rotulo": "13. Tem dificuldade em brincar ou envolver-se em atividades de lazer de forma calma", "tipo": "escala", "opcoes": ["Nem um pouco", "Só um pouco", "Bastante", "Demais"], "secao": "Hiperatividade e impulsividade (itens 10 a 18)" },
+    { "id": "snap_14", "rotulo": "14. Não para ou frequentemente está a “mil por hora”", "tipo": "escala", "opcoes": ["Nem um pouco", "Só um pouco", "Bastante", "Demais"], "secao": "Hiperatividade e impulsividade (itens 10 a 18)" },
+    { "id": "snap_15", "rotulo": "15. Fala em excesso", "tipo": "escala", "opcoes": ["Nem um pouco", "Só um pouco", "Bastante", "Demais"], "secao": "Hiperatividade e impulsividade (itens 10 a 18)" },
+    { "id": "snap_16", "rotulo": "16. Responde as perguntas de forma precipitada antes de elas terem sido terminadas", "tipo": "escala", "opcoes": ["Nem um pouco", "Só um pouco", "Bastante", "Demais"], "secao": "Hiperatividade e impulsividade (itens 10 a 18)" },
+    { "id": "snap_17", "rotulo": "17. Tem dificuldade de esperar sua vez", "tipo": "escala", "opcoes": ["Nem um pouco", "Só um pouco", "Bastante", "Demais"], "secao": "Hiperatividade e impulsividade (itens 10 a 18)" },
+    { "id": "snap_18", "rotulo": "18. Interrompe os outros ou se intromete (por exemplo, mete-se nas conversas/jogos)", "tipo": "escala", "opcoes": ["Nem um pouco", "Só um pouco", "Bastante", "Demais"], "secao": "Hiperatividade e impulsividade (itens 10 a 18)" },
+    {
+      "id": "resumo_hiperatividade",
+      "rotulo": "Resumo da hiperatividade e impulsividade",
+      "tipo": "resumo",
+      "secao": "Hiperatividade e impulsividade (itens 10 a 18)",
+      "minimo": 6,
+      "nota": "Referência do questionário (tradução validada pela UFRJ e pela UFRGS, divulgada pela ABDA): 6 ou mais itens marcados como “Bastante” ou “Demais” indicam mais sintomas de hiperatividade e impulsividade que o esperado numa criança ou adolescente. É um instrumento de triagem: o diagnóstico exige avaliação clínica completa."
+    },
+
+    { "id": "snap_19", "rotulo": "19. Descontrola-se", "tipo": "escala", "opcoes": ["Nem um pouco", "Só um pouco", "Bastante", "Demais"], "secao": "Oposição e desafio (itens 19 a 26)" },
+    { "id": "snap_20", "rotulo": "20. Discute com adultos", "tipo": "escala", "opcoes": ["Nem um pouco", "Só um pouco", "Bastante", "Demais"], "secao": "Oposição e desafio (itens 19 a 26)" },
+    { "id": "snap_21", "rotulo": "21. Desafia ativamente ou se recusa a atender pedidos ou regras de adultos", "tipo": "escala", "opcoes": ["Nem um pouco", "Só um pouco", "Bastante", "Demais"], "secao": "Oposição e desafio (itens 19 a 26)" },
+    { "id": "snap_22", "rotulo": "22. Faz coisas de propósito que incomodam outras pessoas", "tipo": "escala", "opcoes": ["Nem um pouco", "Só um pouco", "Bastante", "Demais"], "secao": "Oposição e desafio (itens 19 a 26)" },
+    { "id": "snap_23", "rotulo": "23. Culpa os outros pelos seus erros ou mau comportamento", "tipo": "escala", "opcoes": ["Nem um pouco", "Só um pouco", "Bastante", "Demais"], "secao": "Oposição e desafio (itens 19 a 26)" },
+    { "id": "snap_24", "rotulo": "24. É irritável ou facilmente incomodado pelos outros", "tipo": "escala", "opcoes": ["Nem um pouco", "Só um pouco", "Bastante", "Demais"], "secao": "Oposição e desafio (itens 19 a 26)" },
+    { "id": "snap_25", "rotulo": "25. É zangado e ressentido", "tipo": "escala", "opcoes": ["Nem um pouco", "Só um pouco", "Bastante", "Demais"], "secao": "Oposição e desafio (itens 19 a 26)" },
+    { "id": "snap_26", "rotulo": "26. É maldoso ou vingativo", "tipo": "escala", "opcoes": ["Nem um pouco", "Só um pouco", "Bastante", "Demais"], "secao": "Oposição e desafio (itens 19 a 26)" },
+    {
+      "id": "resumo_oposicao",
+      "rotulo": "Resumo da oposição e desafio",
+      "tipo": "resumo",
+      "secao": "Oposição e desafio (itens 19 a 26)",
+      "nota": "Para este grupo o sistema mostra só a soma e a contagem. A interpretação fica com a profissional. É um instrumento de triagem."
+    },
+
+    { "id": "observacoes", "rotulo": "Observações da profissional (contexto, comportamento na entrevista, outros)", "tipo": "textarea", "secao": "Observações" }
+  ]
+}

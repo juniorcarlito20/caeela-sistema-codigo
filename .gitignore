@@ -1,0 +1,36 @@
+node_modules/
+.next/
+.env
+.env.*
+!.env.example
+dist/
+build/
+*.tsbuildinfo
+.superpowers/
+*.log
+.DS_Store
+Thumbs.db
+
+# === DADOS DA INSTITUIÇÃO — NUNCA VERSIONAR ===
+# Arquivos com nomes, CPFs e prontuários de crianças reais
+dados/
+dados-reais/
+*.docx
+*.doc
+*.xlsx
+*.xls
+*.csv
+backups/
+*.sql
+*.sql.gz
+*.dump
+uploads/
+anexos/
+# Arquivos locais de desenvolvimento (assinaturas, documentos) — nunca versionar
+.arquivos/
+# Exceções: modelos em branco, sem dado pessoal
+!docs/modelos/**/*.docx
+# Exceção: agenda fictícia para testar o importador (nomes inventados)
+!tests/fixtures/**/*.docx
+# Exceção: migrações do Prisma (só estrutura, sem dado pessoal)
+!prisma/migrations/**/*.sql

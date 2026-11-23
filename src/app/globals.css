@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Cores oficiais do CAEELA */
+:root {
+  --azul-caeela: #0a63c9;
+  --azul-vivo: #0070f0;
+  --verde: #2ea84a;
+  --amarelo: #f0c000;
+  --vermelho: #b3261e;
+  --azul-prefeitura: #0060a8;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background-color: #f4f7fc;
+  color: #16243b;
+}
+
+/* Degradê sutil nos cantos das telas internas — mesmo toque de cor do login, mais discreto */
+.fundo-caeela {
+  background-image:
+    radial-gradient(circle at top left, rgba(0, 112, 240, 0.08), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(46, 168, 74, 0.08), transparent 55%);
+}
